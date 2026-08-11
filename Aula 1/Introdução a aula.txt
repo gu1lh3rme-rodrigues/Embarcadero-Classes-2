@@ -1,0 +1,13 @@
+Algoritmo:
+
+Sequência de passos finitos para resolver um determinado problema com o objetivo e ordem.
+
+Memorias
+Principal: RAM (Rápida e Volátil)
+Secundária: Disco (Lenta e Estável)
+
+1 byte = 8 bit = 256 combinações 
+
+Tipos: bool/char/int/float
+classe: modelo a ser seguido
+Objeto: o modelo
