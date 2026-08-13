@@ -1,6 +1,6 @@
 [Project]
-filename=Projeto.Pessoa.dev
-name=Project2
+filename=Projeto_Circulo
+name=Circulo
 Type=1
 Ver=2
 ObjFiles=
@@ -51,7 +51,7 @@ AutoIncBuildNr=0
 SyncProduct=1
 
 [Unit1]
-FileName=main.cpp
+FileName=Circulo.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -61,7 +61,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit2]
-FileName=Pessoa.cpp
+FileName=main.cpp
 CompileCpp=1
 Folder=
 Compile=1
