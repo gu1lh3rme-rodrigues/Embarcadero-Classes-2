@@ -1,0 +1,150 @@
+Atividade Avaliativa - Class Carro
+public class Carro {
+
+    private:
+
+    double tamanhoDoTanqueDeCombustivel;  // Litros
+
+    double combustivelNoTanque; // Litros
+
+    double consumo; // Km/L
+
+    /**
+
+     * @param consumoDoCarro Consumo do Carro em kilômetros por litro
+
+     * @param tamanhoDoTanqueDeComsutivelDoCarro Tamanho do tanque de Combustível do Carro comprado
+
+     */
+
+    public:
+
+    Carro(double consumoDoCarro, double tamanhoDoTanqueDeCombustivelDoCarro) {
+
+        consumo = consumoDoCarro;
+
+        tamanhoDoTanqueDeCombustivel = tamanhoDoTanqueDeCombustivelDoCarro;
+
+        combustivelNoTanque = 0;
+
+    }
+
+    /**
+
+     * @return Retorna a quantidade de litros disponível no tanque de combustível.
+
+     */
+
+    double getCombustivelNoTanque() {
+
+        return combustivelNoTanque;
+
+    }
+
+    /** 
+
+     * @return Retorna o tamanho do tanque de Combustiveç
+
+     */
+
+    double getTamanhoDoTanqueDeCombustivel() {
+
+        return tamanhoDoTanqueDeCombustivel;
+
+    }
+
+    /**
+
+     * @param litros Quantidade de combustível em litros a ser abastecida no tanque.
+
+     */
+
+    void abastecer(double litros) {
+
+        double capacidadeDisponivelNoTanque = tamanhoDoTanqueDeCombustivel - combustivelNoTanque;
+
+        double litrosASeremAbastecidos = litros;
+
+        if (capacidadeDisponivelNoTanque < litrosASeremAbastecidos) {
+
+            litrosASeremAbastecidos = capacidadeDisponivelNoTanque;
+
+        }
+
+        combustivelNoTanque = combustivelNoTanque + litrosASeremAbastecidos;
+
+    }
+
+    /**
+
+     * @param litros Quantidade de combustível em litros solicitada para ser retirado do tanque.
+
+     * @return Retorna a quantidade realmente retirada do tanque.
+
+     */
+
+    double retirarCombustivel(double litros) {
+
+        double litrosRetiradosDoTanque = litros;
+
+        if (combustivelNoTanque < litros) {
+
+            litrosRetiradosDoTanque = combustivelNoTanque;
+
+        }
+
+        combustivelNoTanque = combustivelNoTanque - litrosRetiradosDoTanque;
+
+        return litrosRetiradosDoTanque;
+
+    }
+
+    /**
+
+     * @param distanciaEmKilometros Distância desejada a ser percorrida em kilômetros.
+
+     * @return Retorna a distância real percorrida em kilômetros.
+
+     */
+
+    double andar(double distanciaEmKilometros) {
+
+        double litrosNecessarios = distanciaEmKilometros / consumo;
+
+        if (combustivelNoTanque < litrosNecessarios) {
+
+            litrosNecessarios = combustivelNoTanque;
+
+        }
+
+        double distanciaPercorrida = consumo * litrosNecessarios;
+
+              combustivelNoTanque = combustivelNoTanque - litrosNecessarios;
+
+              return distanciaPercorrida;
+
+    }
+
+}
+
+Responda:
+
+1.
+
+Construa dois objetos e instancie-os nas referências carro1 e carro2. O carro1 deve ter um consumo igual 15 km/L e a capacidade total do tanque igual 52 litros, já o carro2 deve ter um consumo igual a 10 km/L e a capacidade total do tanque igual a 40 litros;
+
+2.
+
+Abasteça o carro1 com 25 litros e o carro2 com 40 litros;
+
+3.
+
+Imprima a quantidade de combustível existente no carro1 e no carro2, para que a gente possa realmente verificar se os carros foram abastecidos;
+
+4.
+
+Mande o carro1 e o carro2 andarem 100 quilômetros, guarde o quanto eles puderam andar nas variáveis viagemCarro1 e viagemCarro2;
+
+5.
+
+Crie uma condição que verifique qual carro andou menos, para isto verifique se viagemCarro1 é menor que viagemCarro2, caso positivo imprima o valor armazenado da variável viagemCarro1, caso negativo imprima a variável viagemCarro2;

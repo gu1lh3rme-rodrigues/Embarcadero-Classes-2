@@ -1,27 +1,35 @@
 #pragma once
 #include "Ponto.h"
 
-void Ponto::setId(int val)
-	{	
-		id = val;
-	}
-int Ponto::getId()
-	{
-		return id;
-	}
-void Ponto::setX(int val)
-	{
-		x = val;
-	}
-int Ponto::getX()
-	{
-		return x;
-	}
-void Ponto::setY(int val)
-	{
-		y = val;
-	}
-int Ponto::getY()
-	{
-		return y;
-	}
+class Ponto {
+	private:
+		int id;
+		int x;
+		int y;
+		
+		public:
+		Ponto(int _id, int _x, int _y){
+			id = _id;
+			x = _x;
+			y = _y;
+		}
+			int getId()
+			{
+				return id;
+			}
+			
+				int getX()
+			{
+				return x;
+			}
+			
+				int getY()
+			{
+				return y;
+			}
+			
+			void setX (
+			
+};
+
+
