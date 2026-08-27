@@ -17,17 +17,29 @@ int main() {
 	carro1->andar(100);
 	carro2->andar(100);
 	
-	cout << "Carro1: " <<endl;
-	cout << "Consumo: "<< carro1->getCombustivelNoTanque() <<endl;
-	cout << "Tamanho do Tanque: "<< carro1->getTamanhoDoTanqueDeCombustivel() <<endl;
-	//cout << "Carro Andar: "<<carro1->getCombustivelNoTanque()<<endl;
 	
-		
+	cout << "Carro1: " <<endl;
+	cout << "Tanque: "<< carro1->getCombustivelNoTanque() << "Litros" <<endl;
+	cout << "Carro : "<<carro1->getTamanhoDoTanqueDeCombustivel()<<endl;		
 	
 	cout <<"--------------------------- "<<endl;
 	cout << "Carro2: "; 
-	cout << "Consumo: "<< carro2->getCombustivelNoTanque() <<endl;
-	cout << "Tamanho do Tanque: "<< carro2->getTamanhoDoTanqueDeCombustivel() <<endl;                        
+	cout << "Tanque: "<< carro2->getCombustivelNoTanque() <<"Litros" <<endl;
+	cout << "Carro : "<<carro2->getTamanhoDoTanqueDeCombustivel()<<endl;
+	
+	if(carro1->getTamanhoDoTanqueDeCombustivel() < carro2->getTamanhoDoTanqueDeCombustivel()){
+		cout << "O carro1 viajou: " <<carro1->getTamanhoDoTanqueDeCombustivel() << endl;
+	}
+	else if (carro1->getTamanhoDoTanqueDeCombustivel() > carro2->getTamanhoDoTanqueDeCombustivel()){
+		cout << "O carro2 viajou: " <<carro2->getTamanhoDoTanqueDeCombustivel() << endl;
+	}
+	else {
+		cout <<"Os carros viajaram a mesma distancia" <<endl;
+	}
+	
+	
+	
+	//cout << "Tamanho do Tanque: "<< carro2->getTamanhoDoTanqueDeCombustivel() <<endl;                        
 	//cout << "Carro Andar: "<<carro2->getCombustivelNoTanque()<<endl;
 	
 	
