@@ -1,6 +1,6 @@
 [Project]
-filename=Circulo.dev
-name=Circulo
+filename=ProjetoEmpresa
+name=Projeto_Empresa
 Type=1
 Ver=2
 ObjFiles=
@@ -28,8 +28,8 @@ Folders=
 IncludeVersionInfo=0
 SupportXPThemes=0
 CompilerSet=0
-CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;0;0;0;12;0;0;0
-UnitCount=2
+CompilerSettings=0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;4;0;0;0
+UnitCount=5
 
 [VersionInfo]
 Major=1
@@ -50,8 +50,8 @@ ProductVersion=
 AutoIncBuildNr=0
 SyncProduct=1
 
-[Unit1]
-FileName=Circulo.cpp
+[Unit2]
+FileName=Gestor.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -60,7 +60,37 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit2]
+[Unit3]
+FileName=Empregado.cpp
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit4]
+FileName=Empregado.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
+FileName=Gestor.h
+CompileCpp=1
+Folder=
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit1]
 FileName=main.cpp
 CompileCpp=1
 Folder=

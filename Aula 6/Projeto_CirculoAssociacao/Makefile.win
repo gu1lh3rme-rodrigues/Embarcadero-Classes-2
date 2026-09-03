@@ -1,17 +1,17 @@
-# Project: Circulo
+# Project: Projeto_Circulo-Associacao
 # Makefile created by Embarcadero Dev-C++ 6.3
 
-CPP      = g++.exe -D__DEBUG__
-CC       = gcc.exe -D__DEBUG__
+CPP      = g++.exe
+CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = Circulo.o main.o
-LINKOBJ  = Circulo.o main.o
-LIBS     = -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib" -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+OBJ      = main.o Circulo.o Ponto.o
+LINKOBJ  = main.o Circulo.o Ponto.o
+LIBS     = -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib" -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
-BIN      = Circulo.exe
-CXXFLAGS = $(CXXINCS) -g3
-CFLAGS   = $(INCS) -g3
+BIN      = Projeto_Circulo-Associacao.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
 DEL      = E:\Users\Guilherme Rodrigues\Dev-Cpp\devcpp.exe INTERNAL_DEL
 
 .PHONY: all all-before all-after clean clean-custom
@@ -24,8 +24,11 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
 
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
 Circulo.o: Circulo.cpp
 	$(CPP) -c Circulo.cpp -o Circulo.o $(CXXFLAGS)
 
-main.o: main.cpp
-	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+Ponto.o: Ponto.cpp
+	$(CPP) -c Ponto.cpp -o Ponto.o $(CXXFLAGS)
