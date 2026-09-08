@@ -11,5 +11,5 @@ class FormaBiDimensional : public Forma{
 	public:
 		string nome;
 	
-	FormaBiDimensional(string _nome);
+	FormaBiDimensional(int _id, string _nome);
 };

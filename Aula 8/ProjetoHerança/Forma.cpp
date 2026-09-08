@@ -1,4 +1,4 @@
-
+#pragma once
 #include "Forma.h"
 
 Forma::Forma(int _id){

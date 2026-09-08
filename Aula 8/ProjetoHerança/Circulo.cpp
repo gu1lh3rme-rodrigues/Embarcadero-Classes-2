@@ -1,13 +1,15 @@
-#pragma once 
+#pragma once
 #include "Circulo.h"
 
-void Circulo::Circulo (int _cX, int _cY, double _raio){
+Circulo::Circulo (int _id, string _nome, int _cX, int _cY, double _raio)
+			: FormaBiDimensional(_id, _nome){
+				
 	cX = _cX;
 	cY = _cY;
 	raio = _raio;
 }
 
-double Circulo::getArea(){
-	return PI*raio*raio;
-}
+	double Circulo::getArea(){
+		return PI*raio*raio;
+	}
 

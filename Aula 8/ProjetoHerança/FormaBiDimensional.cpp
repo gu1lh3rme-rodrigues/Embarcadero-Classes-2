@@ -4,6 +4,9 @@
 using namespace std;
 
 
-void FormaBiDimensional::FormaBiDimensional(void _nome){
+FormaBiDimensional::FormaBiDimensional(int _id, string _nome)
+: Forma(_id){
+
+	
 	nome = _nome;
 }
