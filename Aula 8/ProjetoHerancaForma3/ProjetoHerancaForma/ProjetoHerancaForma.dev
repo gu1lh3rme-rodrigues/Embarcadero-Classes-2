@@ -1,6 +1,6 @@
 [Project]
-filename=Projeto_Herança.dev
-name=ProjetoHerança
+FileName=ProjetoHerancaForma.dev
+Name=ProjetoHerancaForma
 Type=1
 Ver=2
 ObjFiles=
@@ -71,7 +71,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit4]
-FileName=Circulo.cpp
+FileName=FormaBidimensional.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -81,7 +81,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=Circulo.h
+FileName=FormaBidimensional.cpp
 CompileCpp=1
 Folder=
 Compile=1
@@ -91,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=FormaBiDimensional.cpp
+FileName=Circulo.h
 CompileCpp=1
 Folder=
 Compile=1
@@ -101,7 +101,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=FormaBiDimensional.h
+FileName=Circulo.cpp
 CompileCpp=1
 Folder=
 Compile=1
