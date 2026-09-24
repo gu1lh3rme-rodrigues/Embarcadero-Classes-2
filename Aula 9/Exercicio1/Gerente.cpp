@@ -3,13 +3,13 @@
 Gerente::Gerente(){
 	
 }
-	Gerente::Gerente(double _salario, string _nome, int _idG):Funcionario (_salario, _nome){
-		idG = _idG;
+	Gerente::Gerente(double _salario, string _nome, string _matricula, int _IdfGerente):Funcionario (_salario, _nome, _matricula){
+		IdfGerente = _IdfGerente;
 	}
 	
-	int Gerente::getIdG(){
-		return idG;
+	int Gerente::getIdfGerente(){
+		return IdfGerente;
 	}
-	void Gerente::setIdG(int _idG){
-		idG = _idG;
+	void Gerente::setIdfGerente(int _IdfGerente){
+		IdfGerente = _IdfGerente;
 	}

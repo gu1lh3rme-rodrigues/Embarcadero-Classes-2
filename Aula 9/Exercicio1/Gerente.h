@@ -4,13 +4,13 @@
 
 class Gerente: public Funcionario{
 	private:
-		int idG;
+		int IdfGerente;
 		
 	
 	public:
 	Gerente();
-	Gerente(double _salario, string _nome, int _idG);
+	Gerente(double _salario, string _nome, string _matricula, int _IdfGerente);
 	
-	int getIdG();
-	void setIdG(int _idG);
+	int getIdfGerente();
+	void setIdfGerente(int _IdfGerente);
 };

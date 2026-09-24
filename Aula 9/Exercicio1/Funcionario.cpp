@@ -3,11 +3,13 @@
 
 Funcionario::Funcionario(){
 	
-}
 
-	Funcionario::Funcionario(double _salario, string _nome){
+
+	Funcionario::Funcionario(double _salario, string _nome, string _matricula){
+		Funcionario::matricula++;
 		salario = _salario;
 		nome = _nome;
+		matricula  = _matricula;
 	}
 	
 	double Funcionario::getSalario()
@@ -19,6 +21,10 @@ Funcionario::Funcionario(){
 		return nome;
 	}
 	
+	string Funcionario::getMatricula(){
+		return matricula;
+	}
+	
 	////////////////////////////////separacao get-set
 	void Funcionario::setSalario(double _salario){
 		salario = _salario;
@@ -27,4 +33,10 @@ Funcionario::Funcionario(){
 	void Funcionario::setNome(string _nome){
 		nome = _nome;
 	}
+	
+	void Funcionario::setMatricula(string _matricula){
+		matricula = _matricula;
+	}
+	
+}
 	
