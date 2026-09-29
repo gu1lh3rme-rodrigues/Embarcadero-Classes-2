@@ -1,42 +1,26 @@
-#include "Funcionario.h"
 #include <string>
+#include <iostream>
+using namespace std;
 
-Funcionario::Funcionario(){
-	
+public class Funcionario {
+    protected string nome;
+    protected double salario;
 
+    public Funcionario(string nome, double salario) {
+        this.nome = nome;
+        this.salario = salario;
+    }
 
-	Funcionario::Funcionario(double _salario, string _nome, string _matricula){
-		Funcionario::matricula++;
-		salario = _salario;
-		nome = _nome;
-		matricula  = _matricula;
-	}
-	
-	double Funcionario::getSalario()
-	{
-		return salario;
-	}
-	
-	string Funcionario::getNome(){
-		return nome;
-	}
-	
-	string Funcionario::getMatricula(){
-		return matricula;
-	}
-	
-	////////////////////////////////separacao get-set
-	void Funcionario::setSalario(double _salario){
-		salario = _salario;
-	}
-	
-	void Funcionario::setNome(string _nome){
-		nome = _nome;
-	}
-	
-	void Funcionario::setMatricula(string _matricula){
-		matricula = _matricula;
-	}
-	
-}
-	
+    public string getNome() {
+        return nome;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public void exibeDados() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Salário: R$ " + salario);
+    }
+};

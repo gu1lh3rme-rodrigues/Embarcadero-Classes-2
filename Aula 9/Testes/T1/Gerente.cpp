@@ -10,7 +10,7 @@ class Gerente: public Funcionario
 		
 	public:
 		Gerente();
-		Gerente(string _nome, double _salario, string _Titulo):Funcionario(_nome, _salario)
+		Gerente(string _nome, double _salario, string _Titulo):Funcionario(_nome)
 		{
 			Titulo = _Titulo;			
 		}
