@@ -1,0 +1,88 @@
+# Project: Teste
+# Makefile created by Embarcadero Dev-C++ 6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o ../Exercicio1/Administrativo.o ../Exercicio1/Assistente.o ../Exercicio1/Funcionario.o ../Exercicio1/Gerente.o ../Exercicio1/Tecnico.o ../Exercicio2/Animal.o ../Exercicio2/Cachorro.o ../Exercicio2/Gato.o ../Exercicio2-1/Miseravel.o ../Exercicio2-1/Pessoa.o ../Exercicio2-1/Pobre.o ../Exercicio2-1/Rica.o ../Exercicio3/CamaroteInferior.o ../Exercicio3/CamaroteSuperior.o ../Exercicio3/Ingresso.o ../Exercicio3/Normal.o ../Exercicio3/Vip.o ../Exercicio4/Imovel.o ../Exercicio4/Novo.o ../Exercicio4/Velho.o
+LINKOBJ  = main.o ../Exercicio1/Administrativo.o ../Exercicio1/Assistente.o ../Exercicio1/Funcionario.o ../Exercicio1/Gerente.o ../Exercicio1/Tecnico.o ../Exercicio2/Animal.o ../Exercicio2/Cachorro.o ../Exercicio2/Gato.o ../Exercicio2-1/Miseravel.o ../Exercicio2-1/Pessoa.o ../Exercicio2-1/Pobre.o ../Exercicio2-1/Rica.o ../Exercicio3/CamaroteInferior.o ../Exercicio3/CamaroteSuperior.o ../Exercicio3/Ingresso.o ../Exercicio3/Normal.o ../Exercicio3/Vip.o ../Exercicio4/Imovel.o ../Exercicio4/Novo.o ../Exercicio4/Velho.o
+LIBS     = -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib" -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
+CXXINCS  = -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
+BIN      = Teste.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+DEL      = E:\Users\Guilherme Rodrigues\Dev-Cpp\devcpp.exe INTERNAL_DEL
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${DEL} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+../Exercicio1/Administrativo.o: ../Exercicio1/Administrativo.cpp
+	$(CPP) -c ../Exercicio1/Administrativo.cpp -o ../Exercicio1/Administrativo.o $(CXXFLAGS)
+
+../Exercicio1/Assistente.o: ../Exercicio1/Assistente.cpp
+	$(CPP) -c ../Exercicio1/Assistente.cpp -o ../Exercicio1/Assistente.o $(CXXFLAGS)
+
+../Exercicio1/Funcionario.o: ../Exercicio1/Funcionario.cpp
+	$(CPP) -c ../Exercicio1/Funcionario.cpp -o ../Exercicio1/Funcionario.o $(CXXFLAGS)
+
+../Exercicio1/Gerente.o: ../Exercicio1/Gerente.cpp
+	$(CPP) -c ../Exercicio1/Gerente.cpp -o ../Exercicio1/Gerente.o $(CXXFLAGS)
+
+../Exercicio1/Tecnico.o: ../Exercicio1/Tecnico.cpp
+	$(CPP) -c ../Exercicio1/Tecnico.cpp -o ../Exercicio1/Tecnico.o $(CXXFLAGS)
+
+../Exercicio2/Animal.o: ../Exercicio2/Animal.cpp
+	$(CPP) -c ../Exercicio2/Animal.cpp -o ../Exercicio2/Animal.o $(CXXFLAGS)
+
+../Exercicio2/Cachorro.o: ../Exercicio2/Cachorro.cpp
+	$(CPP) -c ../Exercicio2/Cachorro.cpp -o ../Exercicio2/Cachorro.o $(CXXFLAGS)
+
+../Exercicio2/Gato.o: ../Exercicio2/Gato.cpp
+	$(CPP) -c ../Exercicio2/Gato.cpp -o ../Exercicio2/Gato.o $(CXXFLAGS)
+
+../Exercicio2-1/Miseravel.o: ../Exercicio2-1/Miseravel.cpp
+	$(CPP) -c ../Exercicio2-1/Miseravel.cpp -o ../Exercicio2-1/Miseravel.o $(CXXFLAGS)
+
+../Exercicio2-1/Pessoa.o: ../Exercicio2-1/Pessoa.cpp
+	$(CPP) -c ../Exercicio2-1/Pessoa.cpp -o ../Exercicio2-1/Pessoa.o $(CXXFLAGS)
+
+../Exercicio2-1/Pobre.o: ../Exercicio2-1/Pobre.cpp
+	$(CPP) -c ../Exercicio2-1/Pobre.cpp -o ../Exercicio2-1/Pobre.o $(CXXFLAGS)
+
+../Exercicio2-1/Rica.o: ../Exercicio2-1/Rica.cpp
+	$(CPP) -c ../Exercicio2-1/Rica.cpp -o ../Exercicio2-1/Rica.o $(CXXFLAGS)
+
+../Exercicio3/CamaroteInferior.o: ../Exercicio3/CamaroteInferior.cpp
+	$(CPP) -c ../Exercicio3/CamaroteInferior.cpp -o ../Exercicio3/CamaroteInferior.o $(CXXFLAGS)
+
+../Exercicio3/CamaroteSuperior.o: ../Exercicio3/CamaroteSuperior.cpp
+	$(CPP) -c ../Exercicio3/CamaroteSuperior.cpp -o ../Exercicio3/CamaroteSuperior.o $(CXXFLAGS)
+
+../Exercicio3/Ingresso.o: ../Exercicio3/Ingresso.cpp
+	$(CPP) -c ../Exercicio3/Ingresso.cpp -o ../Exercicio3/Ingresso.o $(CXXFLAGS)
+
+../Exercicio3/Normal.o: ../Exercicio3/Normal.cpp
+	$(CPP) -c ../Exercicio3/Normal.cpp -o ../Exercicio3/Normal.o $(CXXFLAGS)
+
+../Exercicio3/Vip.o: ../Exercicio3/Vip.cpp
+	$(CPP) -c ../Exercicio3/Vip.cpp -o ../Exercicio3/Vip.o $(CXXFLAGS)
+
+../Exercicio4/Imovel.o: ../Exercicio4/Imovel.cpp
+	$(CPP) -c ../Exercicio4/Imovel.cpp -o ../Exercicio4/Imovel.o $(CXXFLAGS)
+
+../Exercicio4/Novo.o: ../Exercicio4/Novo.cpp
+	$(CPP) -c ../Exercicio4/Novo.cpp -o ../Exercicio4/Novo.o $(CXXFLAGS)
+
+../Exercicio4/Velho.o: ../Exercicio4/Velho.cpp
+	$(CPP) -c ../Exercicio4/Velho.cpp -o ../Exercicio4/Velho.o $(CXXFLAGS)

@@ -1,17 +1,17 @@
-# Project: ProjetoHeranca
+# Project: Project_4
 # Makefile created by Embarcadero Dev-C++ 6.3
 
-CPP      = g++.exe -D__DEBUG__
-CC       = gcc.exe -D__DEBUG__
+CPP      = g++.exe
+CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = main.o Forma.o Circulo.o FormaBiDimensional.o
-LINKOBJ  = main.o Forma.o Circulo.o FormaBiDimensional.o
-LIBS     = -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib" -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+OBJ      = main.o Imovel.o Novo.o Velho.o
+LINKOBJ  = main.o Imovel.o Novo.o Velho.o
+LIBS     = -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib" -L"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/lib" -static-libgcc
 INCS     = -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include"
 CXXINCS  = -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/x86_64-w64-mingw32/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include" -I"E:/Users/Guilherme Rodrigues/Dev-Cpp/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/9.2.0/include/c++"
-BIN      = ProjetoHeranca.exe
-CXXFLAGS = $(CXXINCS) -g3
-CFLAGS   = $(INCS) -g3
+BIN      = Project_4.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
 DEL      = E:\Users\Guilherme Rodrigues\Dev-Cpp\devcpp.exe INTERNAL_DEL
 
 .PHONY: all all-before all-after clean clean-custom
@@ -27,11 +27,11 @@ $(BIN): $(OBJ)
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
 
-Forma.o: Forma.cpp
-	$(CPP) -c Forma.cpp -o Forma.o $(CXXFLAGS)
+Imovel.o: Imovel.cpp
+	$(CPP) -c Imovel.cpp -o Imovel.o $(CXXFLAGS)
 
-Circulo.o: Circulo.cpp
-	$(CPP) -c Circulo.cpp -o Circulo.o $(CXXFLAGS)
+Novo.o: Novo.cpp
+	$(CPP) -c Novo.cpp -o Novo.o $(CXXFLAGS)
 
-FormaBiDimensional.o: FormaBiDimensional.cpp
-	$(CPP) -c FormaBiDimensional.cpp -o FormaBiDimensional.o $(CXXFLAGS)
+Velho.o: Velho.cpp
+	$(CPP) -c Velho.cpp -o Velho.o $(CXXFLAGS)
