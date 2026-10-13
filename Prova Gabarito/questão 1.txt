@@ -1,0 +1,23 @@
+questão 1
+
+Gabarito| Selecionadas
+1 - V	| F
+2 - F	| V
+3 - F	| F
+4 - V	| V
+5 - V	| V
+6 - V	| V
+7 - V	| V
+8 - V	| F
+9 - V	| V
+10 - F	| V
+11 - V	| V
+12 - V	| V
+13 - V	| F
+14 - V	| V
+15 - V	| F
+16 - V	| V
+17 - V	| F
+18 - V	| V
+19 - V	| V
+20 - V	| V

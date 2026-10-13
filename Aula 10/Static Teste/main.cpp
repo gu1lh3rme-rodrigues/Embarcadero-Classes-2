@@ -18,6 +18,9 @@ int main(int argc, char** argv) {
 	cout <<"Aluno: " << a3->getNome()<<endl;
 	cout << "Numero de Matricula: " << a3->getMatricula()<<endl;
 	
+	Aluno *a4 = new Aluno ("D");
+	cout <<"Aluno: " << a4->getNome()<<endl;
+	cout << "Numero de Matricula: " << a4->getMatricula()<<endl;
 	
 	
 	return 0;
