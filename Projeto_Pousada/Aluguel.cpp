@@ -1,92 +1,182 @@
-#include <string>
-#include <iostream>
-#define Diaria 100
-using namespace std;
 
-class AluguelQuarto{
-	
-	
-	private:
-		
-		double valorDiaria;
-		int numDiaria;
-		string nomeLocatario;
-		int numPessoas;
-		int diaE, mesE, anoE, horaE, minE;
-		int diaS, mesS, anoS, horaS, minS;
-		
-	public:
-		
-		AluguelQuarto(int _diaE, int _mesE, int _anoE, int _horaE, int _minE, int _diaS, int _mesS, int _anoS, int _horaS, int _minS)
-		{
-			diaE = _diaE;
-			mesE = _mesE;
-			anoE = _anoE;
-			horaE = _horaE;
-			minE = _minE;
-			diaS = _diaS;
-			mesS = _mesS;
-			anoS = _anoS;
-			horaS = _horaS;
-			minS = _minS;
-		}
-		
-		//fazer os métodos get e set dos campos privados
-		//private
-			double getValorDiaria();
-			string getNomeLocatario();
-			int getNumPessoas();
-		//public
-			int getDiaE();
-			int getMesE();
-			int getAnoE();
-			int getHoraE();
-			int getMinE();
-			int getDiasS();
-			int getMesS();
-			int getAnoS();
-			int getHoraS();
-			int getMinS();
-			
-		//private
-		
-			
-			void setDiaE(int _diaE);
-			void setMesE(int _mesE);
-			void setAnoE(int _anoE);
-			void setHoraE(int _horaE);
-			void setMinE(int _minE);
-			void setDiasS(int _diasS);
-			void setMesS(int _mesS);
-			void setAnoS(int _anoS);
-			void setHoraS(int _horaS);
-			void setMinS(int _minS);
-			
+#include "Aluguel.h"
 
-		//fazer método para calcular número de diárias
-		 int CalcDiaria(){
-		 	return diaS - diaE;
-		 
-		 }
-		//fazer método para calcular valor devido
-		
-		//fazer método para imprimir recibo
-		int exibeDados(){
-			cout << "Dia Entrada: " << diaE << endl;
-			cout << "Mes Entrada: " << mesE << endl;
-			cout << "Ano Entrada: " << anoE << endl;
-			cout << "Hora Entrada: " << horaE << endl;
-			cout << "Min Entrada: " << minE << endl;
-			
-			cout << "\n-----------------" << endl;
-			
-			cout << "Dia Saida: " << diaS << endl;
-			cout << "Mes Saida: " << mesS << endl;
-			cout << "Ano Saida: " << anoS << endl;
-			cout << "Hora Saidada: " << horaS << endl;
-			cout << "Min Saida: " << minS << endl;
-			
-			cout << "\n-----------------" << endl;
-			cout << "\nQtde Diarias: "<< CalcDiaria << endl;
-		}
-};
+AluguelQuarto::AluguelQuarto() {
+
+    numDiaria = 0;
+    numPessoas = 0;
+    ocupado = false;
+
+    diaE = mesE = anoE = horaE = minE = 0;
+    diaS = mesS = anoS = horaS = minS = 0;
+}
+
+double AluguelQuarto::valorDiaria = Diaria;
+
+// Getters
+
+double AluguelQuarto::getValorDiaria() {
+    return valorDiaria;
+}
+
+string AluguelQuarto::getNomeLocatario() {
+    return nomeLocatario;
+}
+
+int AluguelQuarto::getNumPessoas() {
+    return numPessoas;
+}
+
+bool AluguelQuarto::getOcupado() {
+    return ocupado;
+}
+
+// Setters
+
+void AluguelQuarto::setValorDiaria(double valor) {
+    valorDiaria = valor;
+}
+
+void AluguelQuarto::setNomeLocatario(string nome) {
+    nomeLocatario = nome;
+}
+
+void AluguelQuarto::setNumPessoas(int pessoas) {
+    numPessoas = pessoas;
+}
+
+// Registrar entrada
+
+void AluguelQuarto::registrarEntrada(
+    string nome, int _diaE, int _mesE,
+    int _anoE, int _horaE, int _minE) {
+
+    nomeLocatario = nome;
+
+    diaE = _diaE;
+    mesE = _mesE;
+    anoE = _anoE;
+
+    horaE = _horaE;
+    minE = _minE;
+
+    ocupado = true;
+}
+
+// Ano bissexto
+
+bool AluguelQuarto::anoBissexto(int ano) {
+
+    return (ano % 400 == 0) ||
+           (ano % 4 == 0 && ano % 100 != 0);
+}
+
+// Dias do mês
+
+int AluguelQuarto::diasMes(int mes, int ano) {
+
+    if (mes == 2) {
+        if (anoBissexto(ano))
+            return 29;
+        else
+            return 28;
+    }
+
+    if (mes == 4 || mes == 6 ||
+        mes == 9 || mes == 11)
+        return 30;
+
+    return 31;
+}
+
+// Converter data em dias
+
+int AluguelQuarto::converterData(
+    int dia, int mes, int ano) {
+
+    int dias = 0;
+
+    for (int i = 1; i < ano; i++) {
+
+        if (anoBissexto(i))
+            dias += 366;
+        else
+            dias += 365;
+    }
+
+    for (int i = 1; i < mes; i++) {
+        dias += diasMes(i, ano);
+    }
+
+    dias += dia;
+
+    return dias;
+}
+
+// Calcular diárias
+
+int AluguelQuarto::CalcDiaria() {
+
+    int entrada = converterData(diaE, mesE, anoE);
+    int saida = converterData(diaS, mesS, anoS);
+
+    numDiaria = saida - entrada;
+
+    if (horaS > 12 || (horaS == 12 && minS > 0))
+        numDiaria++;
+
+    if (numDiaria < 1)
+        numDiaria = 1;
+
+    return numDiaria;
+}
+
+// Calcular valor
+
+double AluguelQuarto::CalcValor() {
+
+    return CalcDiaria() * valorDiaria;
+}
+
+// Registrar saída
+
+void AluguelQuarto::registrarSaida(
+    int _diaS, int _mesS, int _anoS,
+    int _horaS, int _minS) {
+
+    diaS = _diaS;
+    mesS = _mesS;
+    anoS = _anoS;
+
+    horaS = _horaS;
+    minS = _minS;
+}
+
+// Exibir recibo
+
+void AluguelQuarto::exibeDados() {
+
+    cout << "\n---------- RECIBO ----------" << endl;
+
+    cout << "Locatario: " << nomeLocatario << endl;
+
+    cout << "Data e horario de entrada: "
+         << diaE << "/" << mesE << "/" << anoE
+         << " " << horaE << ":" << minE << endl;
+
+    cout << "Data e horario de saida: "
+         << diaS << "/" << mesS << "/" << anoS
+         << " " << horaS << ":" << minS << endl;
+
+    cout << "Numero de diarias: " << CalcDiaria() << endl;
+
+    cout << "Total devido: R$ " << CalcValor() << endl;
+
+    cout << "----------------------------" << endl;
+}
+
+// Liberar quarto
+
+void AluguelQuarto::liberarQuarto() {
+    ocupado = false;
+}
