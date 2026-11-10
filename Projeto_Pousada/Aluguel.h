@@ -1,5 +1,3 @@
-#define ALUGUEL_H
-
 #include <string>
 #include <iostream>
 #define Diaria 100
@@ -52,5 +50,3 @@ class AluguelQuarto {
         void exibeDados();
         void liberarQuarto();
 };
-
-#

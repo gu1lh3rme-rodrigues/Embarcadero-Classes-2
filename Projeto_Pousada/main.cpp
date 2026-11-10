@@ -50,21 +50,42 @@ int main(int argc, char** argv) {
 
                     cout << "\nNome do locatario: ";
                     getline(cin, nome);
-
-                    cout << "Dia de entrada: ";
+                    
+                    
+                    cout << "Dia de Entrada: ";
                     cin >> dia;
-
+                    while (dia <=0 || dia >=32){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>dia; 
+					}
+               
                     cout << "Mes de entrada: ";
                     cin >> mes;
+                    while (mes <=0 || mes >=13){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>mes; 
+					}
 
                     cout << "Ano de entrada: ";
                     cin >> ano;
+                    while (ano <=2019){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>ano; 
+					}
 
                     cout << "Hora de entrada: ";
                     cin >> hora;
+                    while (hora <0 || hora >=24){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>hora; 
+					}
 
                     cout << "Minuto de entrada: ";
                     cin >> minuto;
+                    while (minuto <0 || minuto >=60){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>minuto; 
+					}
 
                     A1->registrarEntrada(
                         nome, dia, mes, ano, hora, minuto
@@ -108,7 +129,7 @@ int main(int argc, char** argv) {
                     A1->exibeDados();
 
                     A1->liberarQuarto();
-
+                    
                 }
 
                 break;
