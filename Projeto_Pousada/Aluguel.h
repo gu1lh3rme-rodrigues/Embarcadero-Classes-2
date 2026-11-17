@@ -7,7 +7,9 @@ using namespace std;
 class AluguelQuarto {
 
     private:
-
+    	
+    	//int quartos [50], chale [10], cont=0;
+    	
         static double valorDiaria;
 
         int numDiaria;
@@ -18,11 +20,14 @@ class AluguelQuarto {
         int diaS, mesS, anoS, horaS, minS;
 
         bool ocupado;
+                
 
     public:
 
         AluguelQuarto();
-
+        
+       // int getquartos();
+        //int getchale();
         double getValorDiaria();
         string getNomeLocatario();
         int getNumPessoas();

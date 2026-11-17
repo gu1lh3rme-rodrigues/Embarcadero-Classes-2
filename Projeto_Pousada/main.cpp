@@ -8,6 +8,7 @@ int main(int argc, char** argv) {
     AluguelQuarto *A1 = new AluguelQuarto();
 
     int opcao;
+    int tipo;
     double diaria;
 
     cout << "---------- Pousada IFSP ----------" << endl;
@@ -33,7 +34,7 @@ int main(int argc, char** argv) {
         cout << "Escolha uma opcao: ";
         cin >> opcao;
 
-        switch (opcao) {
+        switch (opcao) {//Entrada de dados
 
             case 1: {
 
@@ -61,14 +62,14 @@ int main(int argc, char** argv) {
                
                     cout << "Mes de entrada: ";
                     cin >> mes;
-                    while (mes <=0 || mes >=13){
+                    while (mes<=0 || mes >=13){
                     	cout << "Parametro invalido! Digite novamente:\n ";
                     	cin >>mes; 
 					}
 
                     cout << "Ano de entrada: ";
                     cin >> ano;
-                    while (ano <=2019){
+                    while (ano <=2019 || ano>=2051){
                     	cout << "Parametro invalido! Digite novamente:\n ";
                     	cin >>ano; 
 					}
@@ -97,7 +98,7 @@ int main(int argc, char** argv) {
                 break;
             }
 
-            case 2: {
+            case 2: {//saida de dados
 
                 if (!A1->getOcupado()) {
 
@@ -109,18 +110,40 @@ int main(int argc, char** argv) {
 
                     cout << "\nDia de saida: ";
                     cin >> dia;
+                    while (dia <=0 || dia >=32){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>dia; 
+					}
 
                     cout << "Mes de saida: ";
                     cin >> mes;
+                     while (mes <=0 || mes >=13){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>mes; 
+					}
 
                     cout << "Ano de saida: ";
                     cin >> ano;
+                     while (ano >2050){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >>ano; 
+					}
 
                     cout << "Hora de saida: ";
-                    cin >> hora;
+                    cin >> hora;  
+					while (hora <0 || hora >23){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >> ano;
+					}
 
-                    cout << "Minuto de saida: ";
-                    cin >> minuto;
+                    
+					cout << "Minuto de saida: ";
+                    cin >> minuto;  
+					while (minuto <0 || minuto >59){
+                    	cout << "Parametro invalido! Digite novamente:\n ";
+                    	cin >> minuto;
+					}
+                  
 
                     A1->registrarSaida(
                         dia, mes, ano, hora, minuto
@@ -135,7 +158,7 @@ int main(int argc, char** argv) {
                 break;
             }
 
-            case 3: {
+            case 3: {//Novo valor
 
                 cout << "\nNovo valor da diaria: R$ ";
                 cin >> diaria;

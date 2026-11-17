@@ -9,10 +9,10 @@
 	    diaE = mesE = anoE = horaE = minE = 0;
 	    diaS = mesS = anoS = horaS = minS = 0;
 	}
-	
+	//gets
 	double AluguelQuarto::valorDiaria = Diaria;
 	
-	// Gets
+	
 	
 	double AluguelQuarto::getValorDiaria() {
 	    return valorDiaria;
